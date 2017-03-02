@@ -1,0 +1,12 @@
+
+%table
+	%tr
+		%th Name
+	- @articals.each do |artical|
+		%tr
+			%td 
+				=artical.user_name
+			%td
+				=link_to "Welcome Page", welcome_artical_path(artical), class: "btn btn-default"
+=link_to "back", articals_path, class: "btn btn-default"
+
