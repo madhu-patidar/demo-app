@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
  
   def index
-    @posts = Post.page(3).without_count
+    @posts = Post.order(:id).page params[:page]
+  end
 
   def new
     @post = Post.new
