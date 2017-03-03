@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
  
   def index
-    @posts = Post.all
-  end
+    @posts = Post.page(3).without_count
 
   def new
     @post = Post.new

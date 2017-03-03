@@ -13,16 +13,18 @@
             .col-sm-offset-3
               %thead
               %tr
+                %th= "Sr. No."
                 %th= "Name"
                 %th= "Title"
                 %th= "Post"
                 %th= "Action"
               %tbody
-          - @posts.each do |post|
+          - @posts.each_with_index do |post, index|
             %tr
-
+              %td= post.id
               %td= post.user_name
               %td= post.title
               %td= post.body
               %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+      %p= paginate @posts, window: 5
