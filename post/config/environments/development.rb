@@ -41,16 +41,22 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.assets.quiet = true
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.perform_deliveries = true
-   config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => 'madhu-eshopper.herokuapp.com',
-      :user_name => "madhupatidar909@gmail.com",
-      :password => "Madhu123@",
-      :authentication => :plain,
-      :enable_starttls_auto => true
-  }
+  #  config.action_mailer.smtp_settings = {
+  #     :address => "smtp.gmail.com",
+  #     :port => 587,
+  #     :domain => 'madhu-eshopper.herokuapp.com',
+  #     :user_name => "madhupatidar909@gmail.com",
+  #     :password => "Madhu123@",
+  #     :authentication => :plain,
+  #     :enable_starttls_auto => true
+  # }
+
+config.action_mailer.delivery_method = :mailgun
+config.action_mailer.mailgun_settings = {
+        api_key: 'key-a042f54ee96e456208b77ec3e3c5ecc4',
+        domain: 'smtp.mailgun.org'
+ }
 end
