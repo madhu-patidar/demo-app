@@ -19,7 +19,16 @@ table {
 h1{
   text-align: center;
 }
+.align{
+  text-align: center;
+  
+}
 
 .panel {
   margin-top: 60px;
+}
+.panel-size{
+  padding-left:200px;
+  padding-right:200px;
+  padding-top:90px;  
 }

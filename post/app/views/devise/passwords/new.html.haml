@@ -1,0 +1,10 @@
+.container.panel-size
+  .panel.panel-primary
+    .panel-heading
+      %h3.align Forget Password
+    .panel-body
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| 
+        = f.error_notification 
+        = f.input :email, required: true, autofocus: true 
+        = f.button :submit, "Send me reset password instructions" 
+      = render "devise/shared/links"
